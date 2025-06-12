@@ -2,6 +2,12 @@
 
 This project is a complete visual redesign of the **"Choose Your Skip Size"** page from [wewantwaste.co.uk](https://wewantwaste.co.uk), created as part of a frontend coding challenge.
 
+<p align="center">
+  <a href="https://codesandbox.io/p/github/Schwayzer1/skip-size-redesign/main" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-CodeSandbox-green?style=for-the-badge&logo=codesandbox" alt="Live Demo" />
+  </a>
+</p>
+
 ## 🚀 Tech Stack
 
 - [Next.js 15 (App Router)](https://nextjs.org/)
