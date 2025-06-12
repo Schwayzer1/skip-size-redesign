@@ -5,7 +5,7 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Skip } from "@/types/skip";
 import clsx from "clsx";
-import { CircleAlert, FileWarning } from "lucide-react";
+import { CircleAlert } from "lucide-react";
 
 interface Props {
   skip: Skip;

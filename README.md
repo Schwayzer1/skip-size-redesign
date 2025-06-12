@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Skip Size Selector – Redesign Challenge
 
-## Getting Started
+This project is a complete visual redesign of the **"Choose Your Skip Size"** page from [wewantwaste.co.uk](https://wewantwaste.co.uk), created as part of a frontend coding challenge.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/) - for reusable, accessible UI components
+- [Framer Motion](https://www.framer.com/motion/) – for UI animation
+- [clsx](https://github.com/lukeed/clsx) – for conditional class handling
+
+---
+
+## 🎨 Redesign Goals
+
+- ✅ Visually distinct from the original dark-themed UI
+- ✅ Responsive layout (mobile + desktop)
+- ✅ Clean, modern UI with soft visuals (glassmorphism touch)
+- ✅ Maintain original functionality (selecting a skip, showing total, etc.)
+- ✅ Emphasize user interaction through hover & selection states
+
+---
+
+## ✨ Redesign Highlights
+
+| Feature                 | Description                                                                |
+| ----------------------- | -------------------------------------------------------------------------- |
+| **Visual Identity**     | Gradient background, white cards with blur (glass effect), rounded buttons |
+| **Card Interaction**    | Selectable cards with hover effects, animated transitions                  |
+| **Animated Bottom Bar** | Shows selected skip using `framer-motion`, appears from left               |
+| **Road Warning**        | Skips not allowed on road display a yellow badge                           |
+| **Price Highlighting**  | Prices are shown clearly in bold & modern fonts                            |
+
+---
+
+## 📦 API Source
+
+Skips are loaded dynamically from:
+
+https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft
+
+Each skip card is rendered based on this data structure:
+
+```ts
+export interface Skip {
+  id: number;
+  size: number;
+  hire_period_days: number;
+  transport_cost: number | null;
+  per_tonne_cost: number | null;
+  price_before_vat: number;
+  vat: number;
+  postcode: string;
+  area: string;
+  forbidden: boolean;
+  created_at: string;
+  updated_at: string;
+  allowed_on_road: boolean;
+  allows_heavy_waste: boolean;
+}
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
